@@ -1,6 +1,6 @@
 {
   "name": "arcade",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Browser games I built from scratch, each one a drop-in custom element: <arcade-game name=\"aim\">",
   "type": "module",
   "license": "MIT",
@@ -17,7 +17,7 @@
   ],
   "exports": {
     ".": "./src/index.js",
-    "./games/*": "./src/games/*/index.js"
+    "./games/*": "./src/games/*.js"
   },
   "files": [
     "src",

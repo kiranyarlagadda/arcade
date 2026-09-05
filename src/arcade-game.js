@@ -12,7 +12,8 @@
 // ADDING A NEW GAME
 // ---------------------------------------------------------------------------
 // 1. Create src/games/<yourname>/index.js
-// 2. Export `meta` and `create` (see the contract below)
+// 2. Export `meta` and `create` (see the contract below), and add a one-line
+//    src/games/<yourname>.js that re-exports them, so the chunk gets a name
 // 3. Add it to GAMES in this file
 // 4. GAME_NAMES follows automatically, it is derived from GAMES
 //
@@ -22,7 +23,7 @@
 // ---------------------------------------------------------------------------
 // THE GAME CONTRACT
 // ---------------------------------------------------------------------------
-// Every file in src/games/<name>/index.js exports exactly two things:
+// Every game's src/games/<name>/index.js exports exactly two things:
 //
 //   export const meta = {
 //     title: 'Aim Trainer',
@@ -68,7 +69,7 @@
 
 // Games are lazily imported, so a page only downloads the one it shows.
 export const GAMES = {
-  aim: () => import('./games/aim/index.js'),
+  aim: () => import('./games/aim.js'),
 };
 
 export const GAME_NAMES = Object.keys(GAMES);
