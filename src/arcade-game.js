@@ -14,8 +14,7 @@
 // 1. Create src/games/<yourname>/index.js
 // 2. Export `meta` and `create` (see the contract below)
 // 3. Add it to GAMES in this file
-// 4. Add the name to GAME_NAMES will follow automatically since it is derived
-//    from GAMES
+// 4. GAME_NAMES follows automatically, it is derived from GAMES
 //
 // That is the whole process. You do not need to touch the element or the
 // build config.

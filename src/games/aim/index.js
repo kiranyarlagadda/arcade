@@ -34,7 +34,7 @@ const COUNTDOWN_SECONDS = 3;
 
 export const meta = {
   title: 'Aim Trainer',
-  blurb: 'I built this as a warm-up before ranked sessions and never quite stopped tuning it.',
+  blurb: 'Targets on a grid or loose in the arena, a timed run, and honest numbers at the end.',
   tags: ['reflex', 'canvas'],
   params: {
     mode: { type: 'select', label: 'Mode', default: 'classic', options: ['classic', 'freeshot'] },
@@ -409,6 +409,20 @@ export function create({ container, params, element }) {
     drawEffects(now);
     drawHud();
     if (inputModeForRun === 'raw' && locked) drawCrosshair(ctx, crosshairX, crosshairY, current.crosshair);
+    if (state === 'paused') {
+      ctx.save();
+      ctx.fillStyle = 'rgba(4, 5, 10, 0.55)';
+      ctx.fillRect(0, 0, cssW, cssH);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = colors.ink;
+      ctx.font = '600 20px ui-sans-serif, system-ui, sans-serif';
+      ctx.fillText('Paused', cssW / 2, cssH / 2 - 12);
+      ctx.fillStyle = colors.dim;
+      ctx.font = '13px ui-monospace, "SF Mono", Menlo, monospace';
+      ctx.fillText(lockPaused ? 'click to take the pointer back' : 'come back to resume', cssW / 2, cssH / 2 + 14);
+      ctx.restore();
+    }
   }
 
   function drawResults() {
@@ -711,7 +725,9 @@ export function create({ container, params, element }) {
 
     const modeChanged = next.mode !== current.mode;
     current = { ...next, targets: resolvedTargets };
-    saveOptions({ ...current });
+    const remembered = { ...current };
+    if (!explicitTargets) delete remembered.targets;
+    saveOptions(remembered);
 
     // A live run keeps its own arena and targets; new params take effect on
     // the next run rather than reflowing targets under the player's cursor.
