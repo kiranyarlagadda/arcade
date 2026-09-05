@@ -1,0 +1,19 @@
+:root {
+  --bg: #04050a;
+  --surface: #0e1118;
+  --raised: #161b27;
+  --line: rgba(255,255,255,0.10);
+  --ink: #eef1f8;
+  --dim: #9aa3b8;
+  --faint: #5c6478;
+  --amber: #ffb454;
+  --blue: #7fb0ff;
+  --teal: #5eead4;
+  --rose: #ff5c7a;
+  --sq-light: #3b4459;
+  --sq-dark: #242b3c;
+  --piece-light: #f0ead8;
+  --piece-light-line: #0e1118;
+  --piece-dark: #171b26;
+  --piece-dark-line: #b9c2d6;
+}
