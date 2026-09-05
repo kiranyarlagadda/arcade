@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arcade demo</title>
+    <link rel="stylesheet" href="./demo.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>arcade</h1>
+        <p class="lede">
+          Browser games I built from scratch. Each one is a single tag, lazy-loaded, and
+          disposes itself completely when you take it off the page.
+        </p>
+      </header>
+
+      <nav class="tabs" id="tabs"></nav>
+
+      <section class="stage-row">
+        <div class="stage">
+          <arcade-game id="game" name="aim"></arcade-game>
+        </div>
+
+        <aside class="panel">
+          <h2>Controls</h2>
+          <div class="controls" id="controls">
+            <p class="hint">Waiting for the game to report its params&hellip;</p>
+          </div>
+
+          <h2>Last result</h2>
+          <div class="result" id="result">
+            <p class="hint">Play a run to see stats here.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="snippet-block">
+        <h2>Usage</h2>
+        <pre id="snippet"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
