@@ -70,6 +70,7 @@
 // Games are lazily imported, so a page only downloads the one it shows.
 export const GAMES = {
   aim: () => import('./games/aim.js'),
+  chess: () => import('./games/chess.js'),
 };
 
 export const GAME_NAMES = Object.keys(GAMES);

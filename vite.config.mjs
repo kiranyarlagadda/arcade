@@ -5,6 +5,10 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   root: 'demo',
   build: { outDir: '../dist', emptyOutDir: true },
+  // The engine runs in a module worker that imports games lazily, so the
+  // worker bundle has to stay ES format; the classic-script default cannot
+  // contain a dynamic import.
+  worker: { format: 'es' },
   test: {
     root: '.',
     environment: 'happy-dom',
