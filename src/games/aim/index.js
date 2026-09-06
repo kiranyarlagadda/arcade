@@ -354,10 +354,8 @@ export function create({ container, params, element }) {
         roundRectPath(ctx, c.x + 3, c.y + 3, c.w - 6, c.h - 6, 10);
         ctx.stroke();
       }
-    } else if (arena) {
-      roundRectPath(ctx, arena.x, arena.y, arena.w, arena.h, 16);
-      ctx.stroke();
     }
+    // Freeshot draws no arena outline: the whole element is the arena.
   }
 
   function drawHud() {
