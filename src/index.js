@@ -17,4 +17,5 @@ export { GAME_NAMES, GAMES } from './arcade-game.js';
 export const GAME_INFO = {
   aim: { title: 'Aim Trainer', tag: 'reflex', blurb: 'Timed target runs, on a grid or loose.' },
   chess: { title: 'Chess', tag: 'strategy', blurb: 'Four levels, my own engine.' },
+  draughts: { title: 'Draughts', tag: 'strategy', blurb: 'Checkers on the same engine as chess.' },
 };

@@ -14,6 +14,7 @@ import { think, LEVELS } from './levels.js';
 /** Loaders are lazy so importing this worker does not pull in every game up front. */
 const GAMES = {
   chess: () => import('../games/chess/adapter.js'),
+  draughts: () => import('../games/draughts/adapter.js'),
 };
 
 const gameModules = new Map(); // name -> Promise<module>

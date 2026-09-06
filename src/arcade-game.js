@@ -71,6 +71,7 @@
 export const GAMES = {
   aim: () => import('./games/aim.js'),
   chess: () => import('./games/chess.js'),
+  draughts: () => import('./games/draughts.js'),
 };
 
 export const GAME_NAMES = Object.keys(GAMES);
