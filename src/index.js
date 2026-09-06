@@ -10,3 +10,11 @@
 import './arcade-game.js';
 
 export { GAME_NAMES, GAMES } from './arcade-game.js';
+
+// Titles and one-liners for a game picker, kept here so a page can show the
+// whole roster without importing any game module. Keep in step with each
+// game's meta.
+export const GAME_INFO = {
+  aim: { title: 'Aim Trainer', tag: 'reflex', blurb: 'Timed target runs, on a grid or loose.' },
+  chess: { title: 'Chess', tag: 'strategy', blurb: 'Four levels, my own engine.' },
+};
