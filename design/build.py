@@ -425,7 +425,7 @@ figure.diagram figcaption{font-size:.82rem;color:var(--dim);margin-top:.6rem;max
 
 <section id="chess">
   <p class="eyebrow">Chess</p>
-  <h2>A flat, own-drawn set with a shared plinth</h2>
+  <h2>A flat set with a shared plinth</h2>
   <p class="note">Six silhouettes on a 100 by 100 grid, every piece standing on the same plinth so the set sits level on a rank. Both sides carry a 3px outline in the opposite tone, which is what keeps dark pieces legible on dark squares. Shown after 1. e4 with the g1 knight selected.</p>
   <div class="two">
     <div>{board_html("chess")}</div>

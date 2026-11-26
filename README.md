@@ -1,6 +1,6 @@
 # arcade
 
-Browser games I built from scratch, each one a drop-in custom element.
+Browser games, each one a drop-in custom element.
 
 ```html
 <script type="module">import 'arcade';</script>
@@ -145,12 +145,20 @@ localStorage round trip, and `dispose.test.js` mounts and unmounts the element
 fifty times while counting every listener, timer, animation frame, and
 observer to make sure none of them outlive the element.
 
-## Design
+## Asset index
 
-`design/` holds the asset generator: `build.py`, the SVG templates it renders
-from, and `tokens.css`, the colour palette every game's canvas drawing is
-built against. It is a standalone tool, not part of the package the games
-ship in.
+Where the art files live:
+
+- `design/build.py` generates every SVG in the folders below, plus the
+  overview sheet `design/sheet.html`. Run `python3 design/build.py` to
+  rewrite them.
+- `design/tokens.css` is the colour palette every game's canvas drawing uses.
+- `design/chess/`, `design/draughts/`, `design/aim/` and `design/cascade/`
+  hold the per-game pieces, targets and tiles.
+- `design/brand/` holds the arcade mark and favicon.
+
+None of this ships in the package. The game code keeps its own copy of the
+path data it needs.
 
 ## Licence
 
